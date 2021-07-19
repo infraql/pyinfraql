@@ -37,3 +37,15 @@ class InfraQL:
 			print("ERROR %s %s" % (str(e), e.__doc__))
 			output = None
 		return output
+		
+	def version(self):
+		try:
+			iqlPopen = subprocess.Popen([self.exe] + ["--version"],
+                             stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+			output = iqlPopen.stdout.read()
+			iqlPopen.terminate()
+		except:
+			e = sys.exc_info()[0]
+			print("ERROR %s %s" % (str(e), e.__doc__))
+			output = None
+		return output		
