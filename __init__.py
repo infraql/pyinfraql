@@ -6,10 +6,20 @@ class InfraQL:
 		defaultbin = r'infraql'
 		if plat == 'Windows':
 			defaultbin = r'infraql.exe'
-		self.exe = kwargs.get('exe', defaultbin)
+		# infraql binary
+		self.exe = kwargs.get('exe')
+		if self.exe is not None:
+			self.exe = kwargs.get('exe')
+		else:
+			self.exe = defaultbin
+		self.params = ['exec', '--output', 'json']			
+		# authentication method
 		self.keyfilepath = kwargs.get('keyfilepath')
+		if self.keyfilepath is not None:
+			self.params.append('--keyfilepath')
+			self.params.append(self.keyfilepath)		
+		# specify dbfilepath
 		self.dbfilepath = kwargs.get('dbfilepath')
-		self.params = ['exec', '--keyfilepath', self.keyfilepath, '--output', 'json']
 		if self.dbfilepath is not None:
 			self.params.append('--dbfilepath')
 			self.params.append(self.dbfilepath)
