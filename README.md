@@ -1,5 +1,7 @@
 # pyinfraql - Python Library for InfraQL
 
+> __*This repository has been archived.  The active project is now located at [PyStackQL](https://github.com/stackql/pystackql)*__
+
 ![Platform Support](https://img.shields.io/badge/platform-windows%20macos%20linux-brightgreen)
 ![Python Support](https://img.shields.io/badge/python-3.6%2B-brightgreen)
 
